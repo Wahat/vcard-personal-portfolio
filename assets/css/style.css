@@ -23,51 +23,66 @@
 
   /* gradient */
 
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
-    to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
-  );
-  --bg-gradient-yellow-2: linear-gradient(
-    135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
-  );
-  --text-gradient-yellow: linear-gradient(
-    to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
-  );
+  body, html {
+    height: 100%; /* Make sure the html and body fill the whole page */
+    margin: 0; /* Reset default margins */
+    padding: 0; /* Reset default paddings */
+    background-image: url('../images/bg-6.png'); /* Path to your image */
+    background-position: center center; /* Center the image */
+    background-size: cover; /* Cover the entire viewport */
+    background-attachment: fixed; /* Fix the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
 
-  /* solid */
 
-  --jet: hsl(0, 0%, 22%);
-  --onyx: hsl(240, 1%, 17%);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(0, 0%, 7%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
-  --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --vegas-gold: hsl(45, 54%, 58%);
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
+/* Gradients */
+/* Gradients */
+/* Gradients */
+--bg-gradient-onyx: linear-gradient(
+  to bottom right, 
+  hsl(207, 90%, 55%) 10%, /* Light Icy Blue */
+  hsl(207, 90%, 50%) 97% /* Slightly Darker Icy Blue */
+);
+--bg-gradient-jet: linear-gradient(
+  to bottom right, 
+  hsla(207, 90%, 60%, 0.251) 0%, /* Semi-transparent Light Icy Blue */
+  hsla(207, 90%, 50%, 0) 100% /* Transparent Icy Blue */
+), hsl(207, 90%, 50%);
+--bg-gradient-yellow-1: linear-gradient(
+  to bottom right, 
+  hsl(38, 90%, 60%) 0%, /* Soft Orange */
+  hsla(38, 90%, 60%, 0) 50% /* Transparent Orange */
+);
+--bg-gradient-yellow-2: linear-gradient(
+  135deg, 
+  hsla(38, 90%, 60%, 0.251) 0%, /* Semi-transparent Orange */
+  hsla(38, 90%, 60%, 0) 59.86%
+), hsl(207, 90%, 50%);
+--border-gradient-onyx: linear-gradient(
+  to bottom right, 
+  hsl(207, 90%, 55%) 0%, /* Light Icy Blue */
+  hsla(207, 90%, 55%, 0) 50% /* Transparent Icy Blue */
+);
+--text-gradient-yellow: linear-gradient(
+  to right, 
+  hsl(38, 90%, 60%), /* Soft Orange */
+  hsl(38, 90%, 60%) /* Same Soft Orange */
+);
+
+/* Solid */
+--jet: hsl(207, 90%, 30%) 50%; /* Dark Icy Blue for Text and Elements */
+--onyx: hsl(207, 90%, 25%); /* Darker Icy Blue for Text and Elements */
+--eerie-black-1: hsl(207, 90%, 20%); /* Even Darker Icy Blue for Text and Elements */
+--eerie-black-2: hsl(207, 90%, 15%); /* Darkest Icy Blue for Text and Elements */
+--smoky-black: hsl(207, 90%, 10%); /* Near-Black Icy Blue for Contrast */
+--white-1: hsl(0, 0%, 100%); /* White */
+--white-2: hsl(0, 0%, 98%); /* Off White */
+--orange-yellow-crayola: hsl(38, 90%, 60%); /* Soft Orange for Accents */
+--vegas-gold: hsl(38, 65%, 50%); /* Muted Orange for Less Vibrant Elements */
+--light-gray: hsl(207, 50%, 80%); /* Light Icy Blue Gray for Backgrounds */
+--light-gray-70: hsla(207, 50%, 80%, 0.7); /* Semi-transparent Light Icy Blue Gray */
+--bittersweet-shimmer: hsl(0, 43%, 51%); /* This could be a more muted tone for contrast */
+
 
   /**
    * typography
@@ -317,7 +332,6 @@ main {
 .sidebar {
   margin-bottom: 15px;
   max-height: 112px;
-  overflow: hidden;
   transition: var(--transition-2);
 }
 
@@ -332,8 +346,8 @@ main {
 }
 
 .avatar-box {
-  background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  background: var(--white-2);
+  border-radius: 30px;
 }
 
 .info-content .name {
@@ -397,6 +411,11 @@ main {
   visibility: visible;
 }
 
+.contact-info a {
+  display: inline-flex;
+  overflow-wrap: break-word;
+}
+
 .contacts-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -440,7 +459,7 @@ main {
 
 .social-item .social-link {
   color: var(--light-gray-70);
-  font-size: 18px;
+  font-size: 25px;
 }
 
 
